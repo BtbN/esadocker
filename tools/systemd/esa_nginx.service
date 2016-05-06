@@ -5,7 +5,7 @@ After=docker.service
 
 [Service]
 Restart=always
-ExecStartPre=/bin/sh -c "/usr/bin/docker inspect record_store >/dev/null || /usr/bin/docker create --name record_store btbn/esa_nginx /bin/true"
+ExecStartPre=/bin/sh -c "/usr/bin/docker inspect record_store >/dev/null 2>&1 || /usr/bin/docker create --name record_store btbn/esa_nginx /bin/true"
 ExecStart=/usr/bin/docker run --rm --env-file /etc/esa_nginx.env -p 1935:1935 --volumes-from record_store --name system_esa_nginx btbn/esa_nginx
 ExecStop=/usr/bin/docker stop -t 10 system_esa_nginx
 
