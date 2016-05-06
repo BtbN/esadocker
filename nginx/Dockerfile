@@ -22,10 +22,11 @@ RUN \
 	apt-get -y remove --purge $BDEPS $(apt-mark showauto) && \
 	apt-get -y install $RDEPS && \
 	apt-get clean && \
-	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp* /config/* && \
+	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp* /config/nginx.conf && \
 	mkdir -p /config /logs /record
 
 ADD nginx.conf /config/nginx.conf
+ADD ffmpeg_wrapper.sh /root/ffmpeg_wrapper.sh
 
 EXPOSE 1935
 EXPOSE 80
