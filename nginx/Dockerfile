@@ -14,7 +14,7 @@ RUN \
 	wget "https://github.com/nginx/nginx/archive/${NGINX_COMMIT}.tar.gz" -O nginx.tar.gz && \
 	tar xaf nginx.tar.gz && \
 	cd nginx-* && \
-	./auto/configure --prefix=/usr --builddir=build --conf-path=/config/nginx.conf --error-log-path=/logs/error.log --http-log-path=/logs/access.log --add-module=/root/nginx-rtmp-module && \
+	./auto/configure --prefix=/usr --builddir=build --conf-path=/config/nginx.conf --error-log-path=/logs/error.log --http-log-path=/logs/access.log --add-module=/root/nginx-rtmp-module --with-ipv6 && \
 	make -j4 && \
 	make install && \
 	cd /root && \
@@ -28,9 +28,8 @@ RUN \
 ADD nginx.conf /config/nginx.conf
 ADD ffmpeg_wrapper.sh /root/ffmpeg_wrapper.sh
 
-EXPOSE 1935
-EXPOSE 80
-EXPOSE 443
+EXPOSE 80 443 1935
+VOLUME /record /config
 
-CMD /usr/sbin/nginx
+CMD ["/usr/sbin/nginx"]
 
