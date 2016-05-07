@@ -3,7 +3,7 @@ FROM btbn/ffmpeg_base
 RUN \
 	ESAUPLOAD_COMMIT="5d611cb9ef8fa0669d2e12bf5122309823259b96" && \
 	BDEPS="python-pip python-dev git virtualenv" && \
-	RDEPS="python-minimal" && \
+	RDEPS="python-minimal less nano vim" && \
 	apt-get -y update && \
 	apt-get -y install $BDEPS $RDEPS && \
 	virtualenv -p /usr/bin/python2 /venv && \
