@@ -22,7 +22,7 @@ RUN \
 	apt-get -y remove --purge $BDEPS $(apt-mark showauto) && \
 	apt-get -y install $RDEPS && \
 	apt-get clean && \
-	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp* /config/nginx.conf && \
+	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp* /config/* && \
 	mkdir -p /config /logs /record
 
 ADD nginx.conf /config/nginx.conf
