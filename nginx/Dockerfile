@@ -1,8 +1,8 @@
 FROM btbn/ffmpeg_base
 
 RUN \
-	NGINX_COMMIT="release-1.10.0" && \
-	RTMP_COMMIT="v1.1.7" && \
+	NGINX_COMMIT="release-1.8.1" && \
+	RTMP_COMMIT="e08959247dc840bb42cdf3389b1f5edb5686825f" && \
 	BDEPS="build-essential wget libpcre3-dev libssl-dev zlib1g-dev pkg-config" && \
 	RDEPS="libpcre3 openssl zlib1g" && \
 	apt-get -y update && \
