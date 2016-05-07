@@ -26,7 +26,7 @@ RUN \
 	mkdir -p /config /logs /record
 
 ADD nginx.conf /config/nginx.conf
-ADD ffmpeg_wrapper.sh /root/ffmpeg_wrapper.sh
+ADD ffmpeg_wrapper.sh /config/ffmpeg_wrapper.sh
 
 EXPOSE 80 443 1935
 VOLUME /record /config
