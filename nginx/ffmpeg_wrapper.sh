@@ -2,6 +2,8 @@
 
 [ -n "$2" ] && RTMP_TARGET="$2"
 
+[ -z "$RTMP_TARGET" ] && exit 0
+
 echo "$1 -> $RTMP_TARGET" > /config/ffmpeg.log
 echo >> /config/ffmpeg.log
 
