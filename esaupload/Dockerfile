@@ -1,7 +1,7 @@
 FROM btbn/ffmpeg_base
 
 RUN \
-	ESAUPLOAD_COMMIT="5d611cb9ef8fa0669d2e12bf5122309823259b96" && \
+	ESAUPLOAD_COMMIT="7c1c0d3d878de86011db74cca30a533ac52e857f" && \
 	BDEPS="python-pip python-dev git virtualenv" && \
 	RDEPS="python-minimal less nano vim" && \
 	apt-get -y update && \
