@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN \
 	X264_COMMIT="72d53ab2ac7af24597a824e868f2ef363a22f5d4" && \
-	FFMPEG_COMMIT="dff4f58107cd6c4fabea558cf6031f2680f233aa" && \
+	FFMPEG_COMMIT="50b14539158bd6d179afebb795b38be108359c4a" && \
 	BDEPS="build-essential yasm nasm wget pkg-config" && \
 	apt-get -y update && \
 	apt-get -y install $BDEPS && \
