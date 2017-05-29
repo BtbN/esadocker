@@ -3,8 +3,8 @@ FROM debian:jessie
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN \
-	X264_COMMIT="72d53ab2ac7af24597a824e868f2ef363a22f5d4" && \
-	FFMPEG_COMMIT="50b14539158bd6d179afebb795b38be108359c4a" && \
+	X264_COMMIT="df79067c0cf33da712d344b5f8869be7eaf326f3" && \
+	FFMPEG_COMMIT="6ee4b20f4ae3e726868d3efa038ed3103f69d2a2" && \
 	BDEPS="build-essential yasm nasm wget pkg-config" && \
 	apt-get -y update && \
 	apt-get -y install $BDEPS && \
