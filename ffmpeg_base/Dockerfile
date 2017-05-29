@@ -3,7 +3,7 @@ FROM debian:jessie
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN \
-	X264_COMMIT="df79067c0cf33da712d344b5f8869be7eaf326f3" && \
+	X264_COMMIT="8c2974255b01728d4eda2434cc1997c4a3ca5eff" && \
 	FFMPEG_COMMIT="6ee4b20f4ae3e726868d3efa038ed3103f69d2a2" && \
 	BDEPS="build-essential yasm nasm wget pkg-config" && \
 	apt-get -y update && \
