@@ -11,6 +11,7 @@ RUN \
 	cd /root && \
 	wget "https://github.com/mirror/x264/archive/${X264_COMMIT}.tar.gz" -O x264.tar.gz && \
 	tar xaf x264.tar.gz && \
+	rm x264.tar.gz && \
 	cd x264* && \
 	./configure --prefix=/usr --enable-pic --enable-shared --disable-cli --disable-opencl --disable-interlaced --disable-avs --disable-swscale --disable-lavf --disable-ffms --disable-gpac --disable-lsmash && \
 	make -j4 && \
@@ -19,6 +20,7 @@ RUN \
 	rm -rf x264* && \
 	wget "https://github.com/FFmpeg/FFmpeg/archive/${FFMPEG_COMMIT}.tar.gz" -O ffmpeg.tar.gz && \
 	tar xaf ffmpeg.tar.gz && \
+	rm ffmpeg.tar.gz && \
 	cd FFmpeg* && \
 	./configure --prefix=/usr --disable-doc --disable-static --enable-shared --enable-gpl --enable-libx264 && \
 	make -j4 && \
