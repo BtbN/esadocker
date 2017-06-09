@@ -21,8 +21,9 @@ RUN \
 	make install && \
 	cd /root && \
 	rm -rf nginx-rtmp-module nginx* && \
-	apt-get -y remove --purge $BDEPS $(apt-mark showauto) && \
+	apt-get -y remove --purge $BDEPS && \
 	apt-get -y install $RDEPS && \
+	apt-get -y autoremove && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp* /config/* && \
 	mkdir -p /config /logs /record

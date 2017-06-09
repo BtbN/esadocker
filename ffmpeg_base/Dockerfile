@@ -3,6 +3,7 @@ FROM debian:jessie
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN \
+	set -x && \
 	X264_COMMIT="8c2974255b01728d4eda2434cc1997c4a3ca5eff" && \
 	FFMPEG_COMMIT="6ee4b20f4ae3e726868d3efa038ed3103f69d2a2" && \
 	BDEPS="build-essential yasm nasm wget pkg-config" && \
@@ -27,7 +28,8 @@ RUN \
 	make install && \
 	cd /root && \
 	rm -rf FFmpeg* && \
-	apt-get -y remove --purge $BDEPS $(apt-mark showauto) && \
+	apt-get -y remove --purge $BDEPS && \
+	apt-get -y autoremove && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp*
 
